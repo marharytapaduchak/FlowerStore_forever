@@ -1,16 +1,27 @@
 package ucu.edu.ua.lab7.flower;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
 import ucu.edu.ua.lab7.item.Item;
 
 @Getter@AllArgsConstructor@ToString
+@Entity
+@Table
 public class Flower extends Item {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private double sepalLength;
     private FlowerColor color;
     private double price;
     private FlowerType flowerType;
+   
 
     public Flower() {
         

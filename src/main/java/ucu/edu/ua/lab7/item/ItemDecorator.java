@@ -11,4 +11,7 @@ public abstract class ItemDecorator extends Item {
     public String getDescription() {
         return item.getDescription();
     }
+
+    @Override
+    public abstract double price();
 }
